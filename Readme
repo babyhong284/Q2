@@ -1,0 +1,4 @@
+Buy SSL from provider or Let's Encrypt to create free SSL.
+after SSL Cert and key generated, then create secret. 
+
+kubectl create secret tls example-tls --cert=tls.crt --key=tls.key
