@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-busybox-deployment
+spec:
+  selector:
+    matchLabels:
+      app: my-busybox  # Label to match the service selector
+  template:
+    metadata:
+      labels:
+        app: my-busybox  # Label to match the service selector
+    spec:
+      volumes:
+        - name: my-efs-volume
+          persistentVolumeClaim:
+            claimName: my-efs-volume
+        - name: config-volume
+          configMap:
+            name: my-config
+      containers:
+        - name: my-container
+          image: busybox:latest
+          volumeMounts:
+            - name: efs-site
+              mountPath: /my-efs-volume
+            - name: config-volume
+              mountPath: /etc/my-config
+          env:
+            - name: MY_CONFIG_ENV
+              valueFrom:
+                configMapKeyRef:
+                  name: my-config
+                  key: my-config-key
