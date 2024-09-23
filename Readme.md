@@ -1,4 +1,5 @@
 
+![Screenshot 2024-09-23 211045](https://github.com/user-attachments/assets/6e98481f-7947-4572-abf5-45662a6d46f5)
 
 Buy SSL from provider or Let's Encrypt to create free SSL.
 after SSL Cert and key generated, then create secret. 
