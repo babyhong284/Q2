@@ -1,3 +1,5 @@
+
+
 Buy SSL from provider or Let's Encrypt to create free SSL.
 after SSL Cert and key generated, then create secret. 
 Create SSL before apply ingress_with_ssl.yaml
